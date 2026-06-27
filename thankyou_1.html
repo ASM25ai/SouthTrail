@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Application Received — Direct Finance</title>
+<meta name="robots" content="noindex">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '7794966913922273');
+fbq('track', 'PageView');
+fbq('track', 'Lead');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=7794966913922273&ev=Lead&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --red:#D91A2A; --red-h:#FF2D3E; --red-dim:rgba(217,26,42,.12);
+  --dark:#0C0F18; --surf:#131827; --surf2:#1A2035;
+  --border:#252B40; --border2:#303654;
+  --text:#F0F2F8; --sub:#B0B8D0; --muted:#7A84A0;
+  --green:#16C665; --green-dim:rgba(22,198,101,.18);
+  --amber:#F5A623;
+  --display:'Barlow Condensed',sans-serif;
+  --body:'Inter',sans-serif;
+  --r8:8px; --r12:12px; --r16:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--dark);
+  color:var(--text);
+  font-family:var(--body);
+  line-height:1.55;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ── HEADER ── */
+.hdr{
+  height:60px;
+  background:rgba(19,24,39,.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  padding:0 24px;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.hdr-logo{
+  font-family:var(--display);
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:.5px;
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.hdr-badge{
+  background:var(--red);
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  padding:3px 8px;
+  border-radius:4px;
+  letter-spacing:1px;
+}
+
+/* ── MAIN LAYOUT ── */
+main{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:48px 20px 80px;
+}
+
+.ty-wrap{
+  width:100%;
+  max-width:520px;
+  text-align:center;
+}
+
+/* ── CHECKMARK ── */
+.ty-icon{
+  width:88px;
+  height:88px;
+  border-radius:50%;
+  background:var(--green-dim);
+  border:2px solid rgba(22,198,101,.4);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 28px;
+  animation:pop .5s cubic-bezier(.34,1.56,.64,1) both;
+}
+.ty-icon svg{
+  width:40px;
+  height:40px;
+  stroke:var(--green);
+  stroke-width:2.5;
+  fill:none;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.check-path{
+  stroke-dasharray:60;
+  stroke-dashoffset:60;
+  animation:draw .5s .35s ease forwards;
+}
+@keyframes pop{
+  from{transform:scale(.5);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+@keyframes draw{
+  to{stroke-dashoffset:0}
+}
+
+/* ── HEADLINE ── */
+.ty-tag{
+  display:inline-block;
+  background:var(--green-dim);
+  color:var(--green);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:5px 14px;
+  border-radius:99px;
+  border:1px solid rgba(22,198,101,.25);
+  margin-bottom:16px;
+}
+.ty-title{
+  font-family:var(--display);
+  font-size:52px;
+  font-weight:900;
+  line-height:1.0;
+  margin-bottom:12px;
+  letter-spacing:-0.5px;
+}
+.ty-title span{color:var(--green)}
+.ty-sub{
+  color:var(--sub);
+  font-size:15px;
+  line-height:1.7;
+  margin-bottom:32px;
+  max-width:400px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* ── INFO CARD ── */
+.ty-card{
+  background:var(--surf);
+  border:1px solid var(--border);
+  border-radius:var(--r16);
+  padding:24px 28px;
+  margin-bottom:28px;
+  text-align:left;
+}
+.ty-card-row{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+}
+.ty-card-row:last-child{border-bottom:none}
+.ty-card-icon{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  font-size:18px;
+}
+.ty-card-icon.green{background:var(--green-dim)}
+.ty-card-icon.amber{background:rgba(245,166,35,.12)}
+.ty-card-icon.red{background:var(--red-dim)}
+.ty-card-body{}
+.ty-card-label{
+  font-size:13px;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:2px;
+}
+.ty-card-desc{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.5;
+}
+.ty-card-desc strong{color:var(--sub)}
+
+/* ── TIMELINE ── */
+.ty-steps{
+  background:var(--surf);
+  border:1px solid var(--border);
+  border-radius:var(--r16);
+  padding:24px 28px;
+  margin-bottom:32px;
+  text-align:left;
+}
+.ty-steps-title{
+  font-size:13px;
+  font-weight:700;
+  color:var(--muted);
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+.step-row{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  position:relative;
+  padding-bottom:20px;
+}
+.step-row:last-child{padding-bottom:0}
+.step-row:not(:last-child)::before{
+  content:'';
+  position:absolute;
+  left:15px;
+  top:32px;
+  bottom:0;
+  width:2px;
+  background:var(--border);
+}
+.step-num{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:var(--red-dim);
+  border:1.5px solid rgba(217,26,42,.3);
+  color:var(--red);
+  font-size:13px;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  position:relative;
+  z-index:1;
+}
+.step-body{}
+.step-label{
+  font-size:14px;
+  font-weight:600;
+  color:var(--text);
+  margin-bottom:2px;
+  padding-top:6px;
+}
+.step-desc{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.5;
+}
+
+/* ── ACTIONS ── */
+.ty-actions{
+  display:flex;
+  gap:12px;
+  flex-direction:column;
+}
+.btn-primary{
+  background:var(--red);
+  color:#fff;
+  padding:15px 28px;
+  border-radius:var(--r8);
+  font-size:14px;
+  font-weight:700;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition:background .15s, transform .1s;
+  letter-spacing:.2px;
+}
+.btn-primary:hover{background:var(--red-h);transform:translateY(-1px)}
+.btn-secondary{
+  background:transparent;
+  color:var(--sub);
+  padding:14px 28px;
+  border-radius:var(--r8);
+  font-size:14px;
+  font-weight:600;
+  border:1.5px solid var(--border);
+  cursor:pointer;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition:all .15s;
+}
+.btn-secondary:hover{border-color:var(--border2);color:var(--text)}
+.btn-phone{
+  background:var(--green-dim);
+  border:1.5px solid rgba(22,198,101,.3);
+  color:var(--green);
+  padding:14px 28px;
+  border-radius:var(--r8);
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition:all .15s;
+}
+.btn-phone:hover{background:rgba(22,198,101,.2)}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--border);
+  padding:20px 24px;
+  text-align:center;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* ── MOBILE STICKY ── */
+.mobile-sticky{
+  display:none;
+  position:fixed;
+  bottom:0;left:0;right:0;
+  background:#131827;
+  border-top:1px solid var(--border);
+  padding:10px 16px;
+  gap:10px;
+  z-index:999;
+}
+@media(max-width:600px){
+  .mobile-sticky{display:flex}
+  body{padding-bottom:72px}
+  .ty-title{font-size:40px}
+  .ty-card,.ty-steps{padding:20px 16px}
+  main{padding:32px 16px 80px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="hdr-logo">
+    <span class="hdr-badge">DF</span>
+    Direct Finance
+  </div>
+</header>
+
+<!-- MAIN -->
+<main>
+  <div class="ty-wrap">
+
+    <!-- Animated checkmark -->
+    <div class="ty-icon">
+      <svg viewBox="0 0 24 24">
+        <path class="check-path" d="M5 13l4 4L19 7"/>
+      </svg>
+    </div>
+
+    <!-- Headline -->
+    <div class="ty-tag">✓ Application Received</div>
+    <h1 class="ty-title">You're<br><span>All Set!</span></h1>
+    <p class="ty-sub">Your financing application has been submitted successfully. Our team is already on it.</p>
+
+    <!-- Info card -->
+    <div class="ty-card">
+      <div class="ty-card-row">
+        <div class="ty-card-icon green">⚡</div>
+        <div class="ty-card-body">
+          <div class="ty-card-label">Fast Response</div>
+          <div class="ty-card-desc">Our finance manager is reviewing your application. Expect a call from our <strong>assistant finance manager</strong> within 24–48 hours.</div>
+        </div>
+      </div>
+      <div class="ty-card-row">
+        <div class="ty-card-icon amber">🔒</div>
+        <div class="ty-card-body">
+          <div class="ty-card-label">Your Info Is Secure</div>
+          <div class="ty-card-desc">All information is encrypted and only shared with our lending partners during the approval process.</div>
+        </div>
+      </div>
+      <div class="ty-card-row">
+        <div class="ty-card-icon red">💳</div>
+        <div class="ty-card-body">
+          <div class="ty-card-label">All Credit Welcomed</div>
+          <div class="ty-card-desc">Good, fair, or rebuilding — we work with <strong>20+ lenders</strong> to find your best rate.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Steps -->
+    <div class="ty-steps">
+      <div class="ty-steps-title">What happens next</div>
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-label">Finance manager reviews your application</div>
+          <div class="step-desc">Your file is being reviewed against our lender network right now.</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-label">We call you to confirm details</div>
+          <div class="step-desc">Our assistant finance manager may reach out if additional information is needed.</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-label">You get approved & pick your vehicle</div>
+          <div class="step-desc">Once approved, we'll walk you through your options and get you into your new vehicle.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="ty-actions">
+      <a href="https://southtrailkia.directfinance.ca" class="btn-primary">
+        ← Browse More Vehicles
+      </a>
+      <a href="tel:+16137040577" class="btn-phone">
+        📞 Call Us Now — 613-704-0577
+      </a>
+      <a href="https://southtrailkia.directfinance.ca#apply" class="btn-secondary">
+        Submit Another Application
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- Mobile sticky bar -->
+<div class="mobile-sticky">
+  <a href="tel:+16137040577" style="flex:1;background:var(--green);color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:12px 10px;border-radius:8px;text-align:center">📞 Call Us Now</a>
+  <a href="https://southtrailkia.directfinance.ca" style="flex:1;background:var(--red);color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:12px 10px;border-radius:8px;text-align:center">← Browse Vehicles</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  Direct Finance · Adscalesmedia Inc. · directfinance.ca<br>
+  <span style="color:#3A4058;margin-top:4px;display:block">© 2026 All rights reserved</span>
+</footer>
+
+</body>
+</html>
