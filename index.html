@@ -1182,7 +1182,7 @@ async function submitForm(){
     });
   }catch(e){console.warn('Webhook error',e);}
   // show success regardless of webhook outcome
-window.location.href = '/thankyou';
+window.location.href = '/thankyouab';
   // FB Pixel — fire Lead event on successful form submission
   if(typeof fbq === 'function'){
     fbq('track', 'Lead', {
